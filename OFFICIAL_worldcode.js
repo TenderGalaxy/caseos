@@ -8,7 +8,7 @@ let _tick = 0;
 myId = api.getPlayerId("fenl_") /* Change this to owner of computer */
 function tick() {
   _tick++;
-
+  myId = api.getPlayerId("fenl_") /* Same thing */
 /* POINT CURSOR */
   z = api.getPlayerFacingInfo(myId)
 
