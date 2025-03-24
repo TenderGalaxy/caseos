@@ -24,7 +24,8 @@ caseoser = -50
 if(caseoser == 50 || caseoser == undefined){
 caseoser = -50
 }
-cas["m"] = [0,0,0]
+cas["light"] = [0,0,0]
+cas["path"] = ["files"]
 
 caseFONT = {
 "A": "_#_####_#",
