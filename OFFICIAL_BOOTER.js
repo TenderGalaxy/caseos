@@ -11,10 +11,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 api.log("cas: HARD RESET")
 
-caseos = {}
-caseos["CURSOR"] = [0,0,0]
-caseos["files"] = {}
-caseos["path"] = ["files"]
+cas = {}
+cas["CURSOR"] = [0,0,0]
+cas["files"] = {}
+cas["path"] = ["files"]
 try{ 
 caseoser
 } catch {
@@ -24,7 +24,7 @@ caseoser = -50
 if(caseoser == 50 || caseoser == undefined){
 caseoser = -50
 }
-caseos["m"] = [0,0,0]
+cas["m"] = [0,0,0]
 
 caseFONT = {
 "A": "_#_####_#",
