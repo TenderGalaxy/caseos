@@ -52,27 +52,3 @@ function tick() {
 
 }
 
-/* 
-
-
-m = [caseos["CURSOR"][0] + 5, caseos["CURSOR"][1] - 5, caseos["CURSOR"][2]]
-
-
-api.setBlockRect(caseos["CURSOR"], m, "Air")
-caseos["CURSOR"] = z
-for(let x = 0; x < 5; x++){
-for(let y = 0; y < 5; y++){
-m[0] = z[0] + x
-m[1] = z[1] - y
-m[2] = z[2]
-api.setBlock(m,api.getBlock(50-x,50-y,51))
-}
-}
-
-
-} else {
-api.log("cas: CameraError")
-}
-}
-
-*/
