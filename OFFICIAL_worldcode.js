@@ -6,7 +6,12 @@
 let _tick = 0;
 myId = api.getPlayerId("fenl_") /* Change this to owner of computer */
 
-
+function broadcast(msg){
+	if(error != msg){
+		error = msg
+		api.broadcastMessage(msg)
+	}
+}
 
 
 function print(inp,x,y) {
@@ -55,7 +60,7 @@ function tick() {
   z = z["camPos"]
 
   if(r[2] < 0){
-    api.broadcastMessage("cas: CameraError")
+    broadcast("cas: CameraError")
   } else {
     z[2] ++
 
@@ -74,7 +79,7 @@ function tick() {
 
 
     api.setBlockRect(cas["CURSOR"], m, "Air")
-    caseos["CURSOR"] = z
+    cas["CURSOR"] = z
     for(let x = 0; x < 5; x++){
       for(let y = 0; y < 5; y++){
         m[0] = z[0] + x
@@ -82,10 +87,10 @@ function tick() {
         m[2] = z[2]
         api.setBlock(m,api.getBlock(50-x,50-y,51))
       }
-    }
+    } broadcast("Succesful :P")
 
     } else{
-      api.broadcastMessage("cas: CameraError")
+      broadcast("cas: CameraError")
     }
   }
 
