@@ -1,8 +1,7 @@
 /* Caseos To-Do List
 1. Cursor (Auto) !CHECK
-2. Highlighter (2)
-3. Display File List on Caseos Reset (1)
-4. Click (3)
+2. Highlighter (1) !CHECK
+4. Click (2)
 */
 let _tick = 0;
 myId = api.getPlayerId("fenl_") /* Change this to owner of computer */
@@ -31,7 +30,7 @@ function tick() {
       z[1] = Math.floor(z[1])
       z[2] = 47
 
-      m = [caseos["CURSOR"][0] + 5, caseos["CURSOR"][1] - 5, caseos["CURSOR"][2]]
+      m = [cas["CURSOR"][0] + 5, cas["CURSOR"][1] - 5, cas["CURSOR"][2]]
 
 
     api.setBlockRect(cas["CURSOR"], m, "Air")
@@ -50,5 +49,24 @@ function tick() {
     }
   }
 
+}
+
+function onPlayerSelectInventorySlot(id,slot){
+  if(slot == 1){
+    m = cas["high"]
+    m = [m[0]+4,m[1]-4,m[2]]
+    api.setBlockRect(cas["high"],m,"Air")
+
+    m = cas["CURSOR"]
+    m[0] = Math.floor(m[0]/4)
+    m[1] = Math.floor(m[1]/4)
+
+    cas["high"] = [m[0],m[1],m[2]]
+
+    m[0] += 4
+    m[1] -= 4
+
+    api.setBlockRect(cas["high"],m,"Water")
+  }
 }
 
