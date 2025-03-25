@@ -15,16 +15,16 @@ function broadcast(msg){
 
 
 function print(inp,x,y) {
-	posy = 0
-	i=0
+	let posy = 0
+	let i=0
 
 	while(i < inp.length & posy > -44) {
 		if(inp.charAt(i) == "\n") {
-			x = -48
-			    y -= 4
+			let x = -48
+			    let y -= 4
 		} else {
 
-			m = caseFONT[inp.charAt(i)]
+			let m = caseFONT[inp.charAt(i)]
 			for(let posx = 0; posx < 4; posx++) {
 				for(let posy = 0; posy < 4; posy++) {
 
@@ -54,9 +54,9 @@ function tick() {
   _tick++;
   myId = api.getPlayerId("fenl_") /* Same thing */
 /* POINT CURSOR */
-  z = api.getPlayerFacingInfo(myId)
+  let z = api.getPlayerFacingInfo(myId)
 
-  r = z["dir"]
+  let r = z["dir"]
   z = z["camPos"]
 
   if(r[2] < 0){
@@ -75,7 +75,7 @@ function tick() {
       z[1] = Math.floor(z[1])
       z[2] = 47
 
-      m = [cas["CURSOR"][0] + 5, cas["CURSOR"][1] - 5, cas["CURSOR"][2]]
+      let m = [cas["CURSOR"][0] + 5, cas["CURSOR"][1] - 5, cas["CURSOR"][2]]
 
 
     api.setBlockRect(cas["CURSOR"], m, "Air")
@@ -98,7 +98,7 @@ function tick() {
 
 function onPlayerSelectInventorySlot(id,slot){
   if(slot == 1){
-    m = cas["high"]
+    let m = cas["high"]
     m = [m[0]+4,m[1]-4,m[2]]
     api.setBlockRect(cas["high"],m,"Air")
 
