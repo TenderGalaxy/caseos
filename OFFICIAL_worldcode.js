@@ -5,6 +5,46 @@
 */
 let _tick = 0;
 myId = api.getPlayerId("fenl_") /* Change this to owner of computer */
+
+
+
+
+function print(inp,x,y) {
+	posy = 0
+	i=0
+
+	while(i < inp.length & posy > -44) {
+		if(inp.charAt(i) == "\n") {
+			x = -48
+			    y -= 4
+		} else {
+
+			m = caseFONT[inp.charAt(i)]
+			for(let posx = 0; posx < 4; posx++) {
+				for(let posy = 0; posy < 4; posy++) {
+
+					if(posx == 3 || posy == 3) {
+						api.setBlock(x+posx,y-posy,49,"White Concrete")
+					} else {
+						if(m[posy*3 + posx] == "#") {
+							api.setBlock(x + posx, y - posy, 49, "Black Concrete")
+						} else {
+							api.setBlock(x + posx, y - posy, 49, "White Concrete")
+						}
+					}
+
+				}
+			}
+			x += 4
+			if(x > 46) {
+				x = -48
+				    y -= 4
+			}
+
+		}
+	}
+}
+
 function tick() {
   _tick++;
   myId = api.getPlayerId("fenl_") /* Same thing */
