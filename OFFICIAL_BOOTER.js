@@ -10,7 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 api.log("cas: HARD RESET")
-
+msg = ""
 cas = {}
 cas["CURSOR"] = [0,0,0]
 cas["files"] = {}
