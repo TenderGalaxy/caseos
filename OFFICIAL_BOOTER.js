@@ -24,7 +24,7 @@ caseoser = -50
 if(caseoser == 50 || caseoser == undefined){
 caseoser = -50
 }
-cas["light"] = [0,0,0]
+cas["high"] = [0,0,0]
 cas["path"] = ["files"]
 
 caseFONT = {
