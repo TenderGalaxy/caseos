@@ -113,5 +113,13 @@ function onPlayerSelectInventorySlot(id,slot){
 
     api.setBlockRect(cas["high"],m,"Water")
   }
+  if(slot == 2){
+    let m = cas["files"]["count"]
+    r = 44
+    for(let i = 0; i < m; i++){
+	print(cas["files"][i],-48,r)
+	r -= 4
+    }
+  }
 }
 
