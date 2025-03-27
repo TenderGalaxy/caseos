@@ -12,16 +12,16 @@ api.log("cas: " + x)
 api.log("cas: " + m)
 status = "EDIT"
 
-if(caseos["files"][m] == undefined){
+if(cas["files"][m] == undefined){
 status = "NEW"
-caseos["files"]["count"]++
+cas["files"]["count"]++
 api.log("cas: FILE UPLOADING")
 }
 
-if (isNaN(caseos["files"]["count"])){
-caseos["files"]["count"] = 1
+if (isNaN(cas["files"]["count"])){
+cas["files"]["count"] = 1
 }
 
-r = caseos["files"]["count"] 
-caseos["files"][r] = m
-caseos["files"][m] = j
+r = cas["files"]["count"] 
+cas["files"][r] = m
+cas["files"][m] = j
