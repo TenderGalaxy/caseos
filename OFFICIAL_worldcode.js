@@ -97,14 +97,14 @@ function tick() {
 }
 
 function onPlayerSelectInventorySlot(id,slot){
-  if(slot == 1){
+  if(slot == 0){
     let m = cas["high"]
     m = [m[0]+4,m[1]-4,m[2]]
     api.setBlockRect(cas["high"],m,"Air")
 
     m = cas["CURSOR"]
-    m[0] = Math.floor(m[0]/4)
-    m[1] = Math.floor(m[1]/4)
+    m[0] = Math.floor(m[0]/4) * 4
+    m[1] = Math.floor(m[1]/4) * 4
 
     cas["high"] = [m[0],m[1],m[2]]
 
@@ -113,7 +113,7 @@ function onPlayerSelectInventorySlot(id,slot){
 
     api.setBlockRect(cas["high"],m,"Water")
   }
-  if(slot == 2){
+  if(slot == 1){
     let m = cas["files"]["count"]
     r = 44
     for(let i = 0; i < m; i++){
