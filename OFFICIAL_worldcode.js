@@ -57,6 +57,7 @@ function tick() {
   _tick++;
   myId = api.getPlayerId("fenl_") /* Same thing */
 /* POINT CURSOR */
+  if(_tick % 2 == 0){
   let z = api.getPlayerFacingInfo(myId)
 
   let r = z["dir"]
@@ -96,7 +97,7 @@ function tick() {
       broadcast("cas: CameraError")
     }
   }
-
+  }
 }
 
 function onPlayerSelectInventorySlot(id,slot){
@@ -108,20 +109,20 @@ function onPlayerSelectInventorySlot(id,slot){
     m = cas["CURSOR"]
     m[0] = Math.floor(m[0]/4) * 4
     m[1] = Math.floor(m[1]/4) * 4
-
+    m[2] ++
     cas["high"] = [m[0],m[1],m[2]]
 
     m[0] += 4
     m[1] -= 4
-    m[2] ++
 
     api.setBlockRect(cas["high"],m,"Water")
   }
   if(slot == 1){
     let m = cas["files"]["count"]
+	api.log(m)
     r = 44
     for(let i = 0; i < m; i++){
-	print(cas["files"][i],-48,r)
+	broadcast(cas["files"][i + 1],-48,r)
 	r -= 4
     }
   }
