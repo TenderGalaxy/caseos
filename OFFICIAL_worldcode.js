@@ -17,7 +17,7 @@ function broadcast(msg){
 
 function print(inp,dx,dy) {
 	let posy = 0
-	let i=0
+	let i = 0
 	let x = dx
 	let y = dy
 
@@ -49,7 +49,7 @@ function print(inp,dx,dy) {
 				    y -= 4
 			}
 
-		}
+		} i++
 	}
 }
 
@@ -112,18 +112,18 @@ function onPlayerSelectInventorySlot(id,slot){
     m[2] ++
     cas["high"] = [m[0],m[1],m[2]]
 
-    m[0] += 4
-    m[1] -= 4
+    m[0] += 3
+    m[1] -= 3
 
     api.setBlockRect(cas["high"],m,"Water")
   }
   if(slot == 1){
     let m = cas["files"]["count"]
-	api.log(m)
     r = 44
     for(let i = 0; i < m; i++){
-	broadcast(cas["files"][i + 1],-48,r)
+	print(cas["files"][i + 1],-48,r)
 	r -= 4
     }
   }
 }
+
