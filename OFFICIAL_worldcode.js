@@ -14,14 +14,16 @@ function broadcast(msg){
 }
 
 
-function print(inp,x,y) {
+function print(inp,dx,dy) {
 	let posy = 0
 	let i=0
+	let x = dx
+	let y = dy
 
 	while(i < inp.length & posy > -44) {
 		if(inp.charAt(i) == "\n") {
 			let x = -48
-			    let y -= 4
+			y -= 4
 		} else {
 
 			let m = caseFONT[inp.charAt(i)]
