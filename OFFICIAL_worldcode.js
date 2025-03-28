@@ -5,6 +5,7 @@
 */
 let _tick = 0;
 myId = api.getPlayerId("fenl_") /* Change this to owner of computer */
+let error = 0;
 
 function broadcast(msg){
 	if(error != msg){
@@ -112,6 +113,7 @@ function onPlayerSelectInventorySlot(id,slot){
 
     m[0] += 4
     m[1] -= 4
+    m[2] ++
 
     api.setBlockRect(cas["high"],m,"Water")
   }
@@ -124,4 +126,3 @@ function onPlayerSelectInventorySlot(id,slot){
     }
   }
 }
-
